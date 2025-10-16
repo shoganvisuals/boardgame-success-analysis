@@ -1,6 +1,6 @@
 # Board Game Ratings Analysis: What Makes a Winning Game?
 
-Download Executive Summary
+![Download Executive Summary](boardgames_executive_summary.pdf)
 
 ## Project Overview
 This project analyzes a dataset of 18,304 board games from Kaggle to identify factors driving high player ratings, providing data-driven insights for a mid-sized game publisher. Using Excel for data cleaning and Tableau Public (version 2024.3) for visualization, I created an interactive dashboard to explore trends in game mechanics, expansions, licensed properties, and classic vs. modern editions. A Bayesian weighted rating formula ensured reliable rankings for games with fewer votes. The dashboard, titled "What Makes a Winning Game? Analyzing 18,000 Boardgames," is published at Tableau Public.
