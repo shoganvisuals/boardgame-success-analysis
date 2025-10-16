@@ -1,4 +1,4 @@
-#Board Game Ratings Analysis: What Makes a Winning Game?
+# Board Game Ratings Analysis: What Makes a Winning Game?
 
 Download Executive Summary
 
@@ -7,8 +7,8 @@ This project analyzes a dataset of 18,304 board games from Kaggle to identify fa
 
 ## Data Sourcing
 The dataset, sourced from Kaggle’s “20,000 Boardgames Dataset” (derived from BoardGameGeek.com), includes 18,304 games with ≥10 user ratings. 
-Key fields include:
 
+Key fields include:
 Game name
 Category (board, card, dice, hybrid)
 Year published
@@ -27,9 +27,13 @@ Removing duplicates and entries with <10 ratings.
 Categorizing games by mechanics (board, card, dice, hybrid) and type (standalone, expansion, licensed, classic).
 Applying a Bayesian weighted rating formula for games with 10–99 ratings to adjust for low vote counts: 
 [ \text{Weighted Score} = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C ]
+
 ( R ): Average rating of the game
+
 ( v ): Number of votes for the game
+
 ( m ): Minimum votes for “full trust” (set to 100)
+
 ( C ): Overall average rating across all games This formula pulls low-vote games toward the global average, preventing “two-vote wonders” from skewing rankings.
 
 The cleaned dataset was exported as boardgames_cleaned.xlsx.
@@ -43,7 +47,11 @@ Compared standalone vs. expansion games and licensed vs. original titles.
 Grouped classic games (e.g., Monopoly, Risk) and franchise tie-ins (e.g., Marvel, Star Wars) for comparison.
 
 ## Dashboard Development in Tableau Public
-Using Tableau Public, I built a dashboard (1280 x 1024 pixels) titled “What Makes a Winning Game? Analyzing 18,000 Boardgames,” featuring five interactive charts:
+Using Tableau Public, I built a dashboard, [https://tinyurl.com/2m98vxaf], (1280 x 1024 pixels) titled “What Makes a Winning Game? Analyzing 18,000 Boardgames.” 
+
+![Dashboard_Screenshot](boardgame_dashboard.png)
+
+The dashboard features five interactive charts:
 
 Bullet Graph: Standalones vs. Expansions (400 x 300 pixels): Shows standalone games generally outperform expansions in average ratings.
 
@@ -70,23 +78,36 @@ Simpsons: 5.481 (13 titles, dark brownish-orange, very small)
 
 ## Key Insights
 Mechanics: Card & dice hybrids (median rating 6.422) outperform pure dice games (6.267).
+
 Expansions: Tend to have slightly lower ratings than standalone games.
+
 Franchises: Superhero franchises (e.g., DC Comics, 6.627) outperform movie tie-ins (e.g., Star Wars, 6.217) but not original titles (6.4007).
+
 Classics: Brand recognition helps (e.g., Dungeons & Dragons), but some classics (e.g., Monopoly) underperform.
+
 Votes: Higher vote counts stabilize ratings, reducing volatility.
 
 ## Recommendations
 For game publishers:
+
 Design Focus: Prioritize card-driven or hybrid mechanics for higher ratings.
+
 Growth Strategy: Develop expansions for successful titles to boost engagement, but ensure quality.
+
 Licensing Caution: Use superhero franchises selectively; movie tie-ins may underperform.
+
 Portfolio Balance: Modernize classics carefully, focusing on gameplay over nostalgia.
+
 Playtesting: Encourage early reviews to predict long-term success.
 
 ## Skills Demonstrated
 Data cleaning and transformation (Excel)
+
 Descriptive & inferential analysis (R/statistical reasoning)
+
 Data visualization (Tableau Public)
+
 Storytelling with data
+
 Dashboard UX design for portfolio presentation
 
