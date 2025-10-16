@@ -24,8 +24,11 @@ Data was downloaded from Kaggle and cleaned in Excel to remove duplicates and in
 I cleaned the dataset in Excel by:
 
 Removing duplicates and entries with <10 ratings.
+
 Categorizing games by mechanics (board, card, dice, hybrid) and type (standalone, expansion, licensed, classic).
+
 Applying a Bayesian weighted rating formula for games with 10–99 ratings to adjust for low vote counts: 
+
 [ \text{Weighted Score} = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C ]
 
 ( R ): Average rating of the game
@@ -34,40 +37,48 @@ Applying a Bayesian weighted rating formula for games with 10–99 ratings to ad
 
 ( m ): Minimum votes for “full trust” (set to 100)
 
-( C ): Overall average rating across all games This formula pulls low-vote games toward the global average, preventing “two-vote wonders” from skewing rankings.
+( C ): Overall average rating across all games 
 
-The cleaned dataset was exported as boardgames_cleaned.xlsx.
+This formula pulls low-vote games toward the global average, preventing “two-vote wonders” from skewing rankings.
+
+The cleaned dataset was exported as boardgames_clean.csv.
 
 ## Exploratory Data Analysis
 In Excel, I conducted exploratory analysis:
 
 Calculated descriptive statistics (mean, median, range) for ratings by category.
+
 Identified correlations between ratings, votes, and game types.
+
 Compared standalone vs. expansion games and licensed vs. original titles.
+
 Grouped classic games (e.g., Monopoly, Risk) and franchise tie-ins (e.g., Marvel, Star Wars) for comparison.
 
 ## Dashboard Development in Tableau Public
 Using Tableau Public, I built a dashboard, [https://tinyurl.com/2m98vxaf], (1280 x 1024 pixels) titled “What Makes a Winning Game? Analyzing 18,000 Boardgames.” 
 
-![Dashboard_Screenshot](boardgame_dashboard.png)
-
 The dashboard features five interactive charts:
 
-Bullet Graph: Standalones vs. Expansions (400 x 300 pixels): Shows standalone games generally outperform expansions in average ratings.
+### Bullet Graph: 
+Standalones vs. Expansions (400 x 300 pixels): Shows standalone games generally outperform expansions in average ratings.
 
-Box and Whisker Chart: Types of Games (Mechanics) (400 x 300 pixels): Displays median ratings:
+### Box and Whisker Chart: 
+Types of Games (Mechanics) (400 x 300 pixels): Displays median ratings:
 Board games: 6.371; Card games: 6.281; Card & dice games: 6.422 (highest);Dice games: 6.267
 
-Horizontal Bar Chart: 10 Classic Brands’ Average Ratings (400 x 300 pixels): Compares classics:
+### Horizontal Bar Chart: 
+10 Classic Brands’ Average Ratings (400 x 300 pixels): Compares classics:
 Top: Dungeons & Dragons, Risk, Clue (~6.0+)
 Bottom: Monopoly, Sorry!, The Game of Life (≤5.755)
 
-Pie Chart: Avg. Ratings of Originals & Franchise Tie-Ins (300 x 300 pixels): Shows:
+### Pie Chart: 
+Average Ratings of Originals & Franchise Tie-Ins (300 x 300 pixels): Shows:
 Superhero/comic franchises (DC Comics, Marvel): 6.5638 (122 titles)
 Movie properties (Star Wars, LOTR, Harry Potter): 6.1593 (275 titles)
 Original titles: 6.4007 (17,907 titles)
 
-Packed Bubbles Chart: Games Tied to Franchises (400 x 300 pixels): Visualizes franchise ratings (color/size by average rating):
+### Packed Bubbles Chart: 
+Games Tied to Franchises (400 x 300 pixels): Visualizes franchise ratings (color/size by average rating):
 DC Comics: 6.627 (51 titles, dark blue, largest)
 Marvel: 6.421 (58 titles, light blue, large)
 Star Trek: 6.373 (44 titles, light orange, medium)
@@ -75,6 +86,9 @@ Star Wars: 6.217 (85 titles, medium orange)
 Lord of the Rings: 6.190 (59 titles, medium orange)
 Harry Potter: 6.156 (31 titles, dark orange, small)
 Simpsons: 5.481 (13 titles, dark brownish-orange, very small)
+
+![Dashboard_Screenshot](boardgame_dashboard.png)
+Interactive Tableau dashboard visualizing board game ratings across 18,304 titles, with charts highlighting mechanics, franchises, and classic vs. modern games.
 
 ## Key Insights
 Mechanics: Card & dice hybrids (median rating 6.422) outperform pure dice games (6.267).
