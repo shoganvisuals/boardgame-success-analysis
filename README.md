@@ -29,6 +29,7 @@ Categorizing games by mechanics (board, card, dice, hybrid) and type (standalone
 
 Applying a Bayesian weighted rating formula for games with 10–99 ratings to adjust for low vote counts: 
 
+```excel:disable-run
 [ \text{Weighted Score} = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C ]
 
 ( R ): Average rating of the game
@@ -37,7 +38,8 @@ Applying a Bayesian weighted rating formula for games with 10–99 ratings to ad
 
 ( m ): Minimum votes for “full trust” (set to 100)
 
-( C ): Overall average rating across all games 
+( C ): Overall average rating across all games
+```
 
 This formula pulls low-vote games toward the global average, preventing “two-vote wonders” from skewing rankings.
 
